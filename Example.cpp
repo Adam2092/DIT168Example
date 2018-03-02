@@ -12,8 +12,8 @@
 int main(int /*argc*/, char** /*argv*/) {
 
     cluon::OD4Session od4(111,[](cluon::data::Envelope &&envelope) noexcept {
-        if (envelope.dataType() == opendlv::proxy::GroundSteeringRequest::ID()) {
-            opendlv::proxy::GroundSteeringRequest receivedMsg = cluon::extractMessage<opendlv::proxy::GroundSteeringRequest>(std::move(envelope));
+        if (envelope.dataType() == opendlv::proxy::GroundSteeringReading::ID()) {
+            opendlv::proxy::GroundSteeringReading receivedMsg = cluon::extractMessage<opendlv::proxy::GroundSteeringReading>(std::move(envelope));
             std::cout << "Sent a message for ground steering to " << receivedMsg.steeringAngle() << "." << std::endl;
         }
         else if (envelope.dataType() == opendlv::proxy::PedalPositionReading::ID()) {
@@ -30,7 +30,7 @@ int main(int /*argc*/, char** /*argv*/) {
 
     std::cout << "Hello World again!" << std::endl;
 
-    opendlv::proxy::GroundSteeringRequest msgSteering;
+    opendlv::proxy::GroundSteeringReading msgSteering;
     opendlv::proxy::PedalPositionReading msgPedal;
 
     const int delay = 1000;

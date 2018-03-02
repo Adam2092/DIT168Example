@@ -1,4 +1,4 @@
-message opendlv.proxy.GroundSteeringRequest [id = 1090] {
+message opendlv.proxy.GroundSteeringReading [id = 1045] {
   float steeringAngle [id = 1];
 }
 
