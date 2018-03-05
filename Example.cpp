@@ -38,12 +38,12 @@ int main(int /*argc*/, char** /*argv*/) {
     std::cout << "Now move forward ..." << std::endl;
     msgSteering.steeringAngle(0.0);
     od4.send(msgSteering);
-    msgPedal.percent(40.0);
+    msgPedal.percent(0.4);
     od4.send(msgPedal);
     std::this_thread::sleep_for(std::chrono::milliseconds(2 * delay));
 
     std::cout << "Now turn left a little bit ..." << std::endl;
-    msgPedal.percent(20.0);
+    msgPedal.percent(0.2);
     od4.send(msgPedal);
     msgSteering.steeringAngle(-15.0);
     od4.send(msgSteering);
@@ -57,7 +57,7 @@ int main(int /*argc*/, char** /*argv*/) {
     std::cout << "Now move forward again..." << std::endl;
     msgSteering.steeringAngle(0.0);
     od4.send(msgSteering);
-    msgPedal.percent(40.0);
+    msgPedal.percent(0.4);
     od4.send(msgPedal);
     std::this_thread::sleep_for(std::chrono::milliseconds(delay));
 
