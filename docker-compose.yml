@@ -22,7 +22,7 @@ services:
 
     # Your microservice.
     example:
-        image: cc
+        image: example
         network_mode: "host"
-        restart: always
+        # restart: always # maybe running only once is enough?
         command: "/opt/example --cid=111 --freq=10"
