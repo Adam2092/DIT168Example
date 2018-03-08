@@ -1,4 +1,4 @@
-## Purpose of this folder
+## Purpose
 
 This repository contains only source files that are used __exclusively__ for the demonstration in the lecture session on Fri. 2 Mar. 2018.
 
