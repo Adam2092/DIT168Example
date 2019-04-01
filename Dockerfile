@@ -5,8 +5,7 @@ RUN apk update && \
         ca-certificates \
         cmake \
         g++ \
-        make && \
-    apk add libcluon --no-cache --repository https://chrberger.github.io/libcluon/alpine/v3.7 --allow-untrusted
+        make
 ADD . /opt/sources
 WORKDIR /opt/sources
 RUN cd /opt/sources && \
@@ -19,8 +18,7 @@ RUN cd /opt/sources && \
 FROM alpine:3.7
 MAINTAINER Yue Kang yuek@chalmers.se
 RUN apk update && \
-    apk add libcluon --no-cache --repository https://chrberger.github.io/libcluon/alpine/v3.7 --allow-untrusted && \
     mkdir /opt
 WORKDIR /opt
 COPY --from=builder /tmp/example .
-CMD ["/opt/example"]
+CMD ["/opt/example --cid=112"]
